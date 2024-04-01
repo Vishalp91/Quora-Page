@@ -1,0 +1,25 @@
+Hello there !
+
+This file contains basic information about Quora page Project (RESTful APIs Implementation)
+In this QuoraPage project i am going to develop a Quora Posts page using RESTful APIs
+
+In this page the posts will be the resource which is basically an array of objects where each object is our individual Post
+object => post => {id : someId, username : someUsername, content : someContent}
+
+Using Express.js we will handle client requests coming on the localhost port 8080 (Server on the same local machine) i.e i will write server side code using Express.js
+(Index Route) GET request => "/posts" to server to display all posts on browser for which server will render "Home.ejs" file with posts
+Note : "/posts" means it is basically an URL which client enters in browser i.e resuest to which server is sending a response 
+
+(Show Route => show post button/anchor tag press) GET request => "/posts/:id" to server to display specific post with id in detail. Server will now respond with "Show.ejs" File with specific post data
+
+(New Route => create new post button press) POST request => "/posts" to server to create new Post
+    1. Server on reciving above request render "New.ejs" file(form) 
+    2. On form submission push new post to posts array and redirect to "Home.ejs"
+
+(Edit Route => Edit button press) PATCH request => "/posts/:id to server to edit specific post with id
+    1. Server on reciving above request responds with "Edit.ejs" file(form)
+    2. On form submit updates post(object) in posts array and redirects to "Home.ejs"
+
+(Delete Route => Delete button press) DELETE request => "/posts/:id" to server then 
+    server removes specific post from posts array using filter() method on posts array and 
+    redirects to "Home.ejs"
