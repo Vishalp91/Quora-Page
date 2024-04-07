@@ -31,6 +31,10 @@ let posts = [
     }
 ];
 
+app.get("/", (req, res) => {
+    res.render("/index.html");
+})
+
 //Index Route
 app.get("/posts", (req, res) => {
     console.log(posts);
